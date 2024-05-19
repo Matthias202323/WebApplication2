@@ -1,0 +1,21 @@
+﻿@ViewBag.Expenditures
+@model IEnumerable<Expenditure>
+<h2>Expenditures</h2>
+
+<table>
+    <tr>
+        <td>Nom</td><td>Price</td><td>Date</td>
+    </tr>
+    @{ double sum=0;}
+@foreach (Expenditure exp in Model){
+    <tr>
+<expenditure>
+
+                <td>@exp.Nom</td><td> @exp.Price €</td><td> @exp.Date</td>
+   
+</expenditure>
+        </tr>
+        sum = sum + exp.Price;
+}
+<tr><td>Total</td><td colspan="2">@sum €</td></tr>
+</table>
